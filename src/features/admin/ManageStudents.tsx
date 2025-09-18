@@ -1,21 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { Loader2, UserPlus, Trash2, GraduationCap } from "lucide-react";
