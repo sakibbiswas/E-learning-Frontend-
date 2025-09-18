@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
-{
+  {
     q: "How do I enroll in an online course?",
     a: "Simply create an account, choose your desired course, and complete the enrollment process through our secure payment portal.",
   },
@@ -34,40 +34,31 @@ const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-br from-gray-900 via-emerald-950 to-gray-900 text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        {/* Left Image (fixed, does not animate) */}
-        <div className="sticky top-24">
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&q=80&w=1000"
-            alt="Students"
-            className="rounded-3xl shadow-2xl border border-gray-800"
-          />
-        </div>
-
-        {/* Right Content */}
+    <section className="relative py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-gray-900 via-emerald-950 to-gray-900 text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+        {/* Right Content (mobile-first) */}
         <div>
-          <p className="uppercase text-emerald-400 font-bold tracking-widest mb-2">
+          <p className="uppercase text-emerald-400 font-bold tracking-widest mb-2 text-sm sm:text-base">
             FAQ
           </p>
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 text-white">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-4 sm:mb-6 text-white leading-snug">
             Everything You Need to{" "}
             <span className="text-emerald-400">Know Here</span>
           </h2>
-          <p className="text-gray-300 mb-8">
+          <p className="text-gray-300 mb-6 sm:mb-8 text-sm sm:text-base">
             Find answers to the most common questions about admissions, courses,
             and our platform.
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="bg-gray-800 border border-gray-700 rounded-2xl shadow-lg overflow-hidden"
+                className="bg-gray-800 border border-gray-700 rounded-xl sm:rounded-2xl shadow-lg overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                  className="w-full flex justify-between items-center p-5 text-left text-white font-semibold hover:bg-gray-700 transition-colors duration-300"
+                  className="w-full flex justify-between items-center p-4 sm:p-5 text-left text-white font-medium sm:font-semibold hover:bg-gray-700 transition-colors duration-300 text-sm sm:text-base"
                 >
                   {faq.q}
                   <ChevronDown
@@ -85,7 +76,7 @@ const FAQSection: React.FC = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.35, ease: "easeInOut" }}
-                      className="p-5 text-gray-300 border-t border-gray-700"
+                      className="p-4 sm:p-5 text-gray-300 border-t border-gray-700 text-sm sm:text-base"
                     >
                       {faq.a}
                     </motion.div>
@@ -94,6 +85,15 @@ const FAQSection: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Left Image (goes below on mobile, sticky on desktop) */}
+        <div className="order-first md:order-last md:sticky md:top-24">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&q=80&w=1000"
+            alt="Students"
+            className="rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-800 w-full h-auto"
+          />
         </div>
       </div>
     </section>

@@ -45,7 +45,7 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen px-4 sm:px-6 
+    <div className="relative mt-5 min-h-screen px-4 sm:px-6 
       bg-gradient-to-br from-gray-950 via-emerald-950 to-black 
       flex items-center justify-center overflow-hidden text-white">
 
