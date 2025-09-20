@@ -1,69 +1,93 @@
-# React + TypeScript + Vite
+# E-Learning Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+`React + TypeScript frontend for the E-Learning platform (student + admin). This README describes project structure, setup, environment variables, development scripts, important implementation notes (RTK Query, auth, protected routes, SSLCommerz flow), and deployment steps.`
 
-Currently, two official plugins are available:
+### Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+`Project Overview`
 
-## Expanding the ESLint configuration
+`Tech Stack`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+#### Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+`Folder Structure`
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+`Environment Variables`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+`Local Setup (Development)`
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+`Available Scripts`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+`Important Implementation Notes`
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+`Authentication (JWT)`
+
+`RTK Query (API)`
+
+`Protected & Role-based Routes`
+
+`Course & Dashboard Flow`
+
+`SSLCommerz Payment Flow (frontend)`
+
+`shadcn/ui & Tailwind`
+
+`Production Build & Deployment`
+
+`Testing & Linting`
+
+`Contribution
+`
+
+
+#### 1. Project Overview
+
+`This frontend is a single-page application built with React + TypeScript. It consumes a Node.js + Express backend (separate repository) via REST endpoints and uses Redux Toolkit + RTK Query for API communication and state management. UI is styled using Tailwind CSS and shadcn/ui components.`
+
+`Users (students) can browse courses, purchase them via SSLCommerz, and view purchased modules/classes in their dashboard. Admins can add/edit courses and manage students.`
+
+#### 2. Tech Stack
+
+`React 18+ with TypeScript`
+
+`Redux Toolkit + RTK Query`
+
+`React Router v6`
+
+`Tailwind CSS`
+
+`shadcn/ui (optional component library)`
+
+`React Hook Form (forms)`
+
+`axios / fetch (HTTP client inside RTK Query baseQuery)`
+
+Vite (recommended) or Create React App
+
+### 3. Features
+
+`Student`
+
+`Register / Login`
+
+`Browse all courses (Home)`
+
+`View course detail`
+
+`Buy course (SSLCommerz)`
+
+`Dashboard: see purchased courses, modules, and classes`
+
+`Profile update (optional)`
+
+`Admin
+`
+`Admin login`
+
+`Add / Edit / Delete courses`
+
+`Add student manually`
+
+`Remove student`
+
+`Manage payments `
